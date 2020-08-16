@@ -24,6 +24,7 @@ public class Main {
         users.add(new User("Vasja", "kolbaskin", (byte) 33));
         for (User u : users) {
             usersService.saveUser(u.getName(), u.getLastName(), u.getAge());
+            System.out.println("User с именем - " + u.getName() + " добавлен в базу данных");
         }
 //        получение всех юзеров и вывод в консоль
         List<User> us = usersService.getAllUsers();

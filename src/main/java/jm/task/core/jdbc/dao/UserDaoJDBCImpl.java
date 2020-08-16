@@ -19,7 +19,7 @@ public class UserDaoJDBCImpl implements UserDao {
             + ", age tinyint not null);";
             Statement st = conn.createStatement();
             st.execute(query);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
