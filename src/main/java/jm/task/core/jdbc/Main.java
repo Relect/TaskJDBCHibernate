@@ -6,17 +6,33 @@ import jm.task.core.jdbc.util.Util;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
         // реализуйте алгоритм здесь
         Connection connect = Util.getSQLConnection();
         UserDaoJDBCImpl usersService = new UserDaoJDBCImpl();
-//        usersService.createUsersTable();
-//        User user1 = new User("Gennadiy", "Romanov", (byte) 36);
-//        usersService.saveUser(user1.getName(), user1.getLastName(), user1.getAge());
-//        usersService.dropUsersTable();
-//        usersService.removeUserById(1);
-          usersService.getAllUsers();
+//        создание таблицы
+        usersService.createUsersTable();
+//        добавление 4 юзеров в таблицу
+        List<User> users = new ArrayList<>();
+        users.add(new User("Gennadiy", "Romanov", (byte) 36));
+        users.add(new User("Gennadiy", "Romanov", (byte) 35));
+        users.add(new User("Genna", "Romanov", (byte) 36));
+        users.add(new User("Gennadiy", "Roman", (byte) 36));
+        for (User u : users) {
+            usersService.saveUser(u.getName(), u.getLastName(), u.getAge());
+        }
+//        получение всех юзеров и вывод в консоль
+        List<User> us = usersService.getAllUsers();
+        for (User u : us) {
+            System.out.println(u.toString());
+        }
+//        очистка таблицы
+        usersService.cleanUsersTable();
+//        удаление таблицы
+        usersService.dropUsersTable();
     }
 }
