@@ -19,9 +19,9 @@ public class Main {
 //        добавление 4 юзеров в таблицу
         List<User> users = new ArrayList<>();
         users.add(new User("Gennadiy", "Romanov", (byte) 36));
-        users.add(new User("Gennadiy", "Romanov", (byte) 35));
-        users.add(new User("Genna", "Romanov", (byte) 36));
-        users.add(new User("Gennadiy", "Roman", (byte) 36));
+        users.add(new User("Sergei", "Pochuev", (byte) 35));
+        users.add(new User("Dmitriy", "Leviy", (byte) 36));
+        users.add(new User("Vasja", "kolbaskin", (byte) 33));
         for (User u : users) {
             usersService.saveUser(u.getName(), u.getLastName(), u.getAge());
         }
