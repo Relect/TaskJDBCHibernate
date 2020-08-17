@@ -13,5 +13,5 @@ public class Util {
         return DriverManager.getConnection(url, username, password);
     }
 
-    // реализуйте настройку соеденения с БД
+    
 }
