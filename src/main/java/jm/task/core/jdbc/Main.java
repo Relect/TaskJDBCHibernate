@@ -11,7 +11,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        // реализуйте алгоритм здесь
+
+//         реализуйте алгоритм здесь
         Connection connect = Util.getSQLConnection();
         UserDaoJDBCImpl usersService = new UserDaoJDBCImpl();
 //        создание таблицы
@@ -32,8 +33,8 @@ public class Main {
             System.out.println(u.toString());
         }
 //        очистка таблицы
-        usersService.cleanUsersTable();
+//        usersService.cleanUsersTable();
 //        удаление таблицы
-        usersService.dropUsersTable();
+//        usersService.dropUsersTable();
     }
 }
