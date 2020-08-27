@@ -1,5 +1,6 @@
 package jm.task.core.jdbc;
 
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
@@ -13,7 +14,7 @@ public class Main {
     public static void main(String[] args) throws SQLException {
 
         Connection connect = Util.getSQLConnection();
-        UserDaoJDBCImpl usersService = new UserDaoJDBCImpl();
+        UserDaoHibernateImpl usersService = new UserDaoHibernateImpl();
 //        создание таблицы
         usersService.createUsersTable();
 //        добавление 4 юзеров в таблицу
