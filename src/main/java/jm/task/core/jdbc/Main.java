@@ -12,7 +12,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws SQLException {
 
-//         реализуйте алгоритм здесь
         Connection connect = Util.getSQLConnection();
         UserDaoJDBCImpl usersService = new UserDaoJDBCImpl();
 //        создание таблицы
