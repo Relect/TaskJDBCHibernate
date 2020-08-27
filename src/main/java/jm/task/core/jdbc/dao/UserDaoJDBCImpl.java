@@ -24,7 +24,7 @@ public class UserDaoJDBCImpl implements UserDao {
         }
     }
 
-    public void dropUsersTable() throws SQLException {
+    public void dropUsersTable() {
         try {
             Connection conn = Util.getSQLConnection();
             String query = "Drop table Users;";

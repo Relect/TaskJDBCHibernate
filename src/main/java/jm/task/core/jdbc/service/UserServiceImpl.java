@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService {
         usersTable.createUsersTable();
     }
 
-    public void dropUsersTable() throws SQLException {
+    public void dropUsersTable() {
         UserDaoJDBCImpl usersTable = new UserDaoJDBCImpl();
         usersTable.dropUsersTable();
     }
